@@ -1,9 +1,9 @@
 <?php
   // DB Params
-  define('DB_HOST', '46.22.129.7');
-  //define('DB_HOST', 'localhost');
-  define('DB_USER', 'apl_waste_user');
-  define('DB_PASS', 'Upl5o73?');
+  //define('DB_HOST', '20.229.43.101');
+  define('DB_HOST', 'localhost');
+  define('DB_USER', 'root');
+  define('DB_PASS', 'U55C3rr1t0s!');
   define('DB_NAME', 'apleona_waste');
 
   // App Root
