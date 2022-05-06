@@ -73,7 +73,7 @@ require APPROOT . '/views/inc/side_menu.php';
 if ($_SESSION['country'] == 'IE' OR $_SESSION['country']  == 'Workspace') {
 //check if anything in the get. empty after first login
 
-$db = mysqli_connect('46.22.129.7', 'apl_waste_user', 'Upl5o73?', 'apleona_waste');
+$db = mysqli_connect('20.229.43.101', 'root', 'U55C3rr1t0s!', 'apleona_waste');
 
 if (count($_GET) < 2){
     $site = "ALL";
