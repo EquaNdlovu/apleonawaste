@@ -1,4 +1,7 @@
 <script type="text/javascript">
+
+var ROOTWASTE = "<?php echo URLROOTWASTE; ?>";
+
 function chPy()
 {
     var cost1 = document.getElementById("Treatment_Cost").value;
@@ -154,7 +157,7 @@ function getCustomerSiteonload() {
                       type: "POST",
                       async: false,
                       //url: "https://www.apleona.ie/wastefiles_test/get_site_onload.php",
-                      url: "http://localhost/wastefiles_test/get_site_onload.php",
+                      url: ROOTWASTE + "/get_site_onload.php",
                       data: 'selected_customer=' + encodeURIComponent(val) + '&selected_site=' + encodeURIComponent(site),
                       success: function(data){
                         $( '#collections_customer_site' ).html(data);
@@ -171,7 +174,7 @@ function getCustomerSiteonloadWorkSpace() {
                       type: "POST",
                       async: false,
                       //url: "https://www.apleona.ie/wastefiles_test/get_site_onload_workspace.php",
-                      url: "http://localhost/wastefiles_test/get_site_onload_workspace.php",
+                      url: ROOTWASTE + "/get_site_onload_workspace.php",
                       data: 'selected_customer=' + encodeURIComponent(val) + '&selected_site=' + encodeURIComponent(site),
                       success: function(data){
                         $( '#collections_customer_site' ).html(data);
@@ -188,7 +191,7 @@ function getProduceronloadWorkSpace() {
                       type: "POST",
                       async: false,
                       //url: "https://www.apleona.ie/wastefiles_test/get_producer_onload.php",
-                      url: "http://localhost/wastefiles_test/get_producer_onload.php",
+                      url: ROOTWASTE + "/get_producer_onload.php",
                       data: 'selected_customer=' + encodeURIComponent(val) + '&selected_producer=' + encodeURIComponent(producer),
                       success: function(data){
                         $( '#Customer_Waste_Producer' ).html(data);

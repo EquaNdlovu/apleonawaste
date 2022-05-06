@@ -10,6 +10,7 @@
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
   define('URLROOT', 'http://localhost/apleonawaste');
+  define('URLROOTWASTE', 'http://localhost/wastefiles_test');
   //define('URLROOT', 'https://www.apleona.ie/apleonawaste');
   // Site Name
   define('SITENAME', 'Apleona Waste Management ');

@@ -11,12 +11,14 @@ var charityGraph1;
 var charityGraph2;
 var charityGraph3;
 
+var ROOTWASTE = "<?php echo URLROOTWASTE; ?>";
+
 function getCustomer(val) {
                    $.ajax({
                         type: "POST",
                         async: false,
                         //url: "https://www.apleona.ie/wastefiles_test/get_customer.php",
-                        url: "http://localhost/wastefiles_test/get_customer.php",
+                        url: ROOTWASTE + "/get_customer.php",
                         data: 'selected_country=' + encodeURIComponent(val),
                         success: function(data){
                           $( '#collections_customer_number' ).html(data);
@@ -30,7 +32,7 @@ function getCustomer(val) {
                         type: "POST",
                         async: false,
                         //url: "https://www.apleona.ie/wastefiles_test/get_customer.php",
-                        url: "http://localhost/wastefiles_test/get_customer.php",
+                        url: ROOTWASTE + "/get_customer.php",
                         data: 'selected_country=' + encodeURIComponent(val),
                         success: function(data){
                           $( '#waste_site_customer' ).html(data);
@@ -52,7 +54,7 @@ function getCustomer(val) {
                       type: "POST",
                       async: false,
                       //url: "https://www.apleona.ie/wastefiles_test/get_site.php",
-                      url: "http://localhost/wastefiles_test/get_site.php",
+                      url: ROOTWASTE + "/get_site.php",
                       data: 'selected_customer=' + encodeURIComponent(val),
                       success: function(data){
                         $( '#collections_customer_site' ).html(data);
@@ -69,7 +71,7 @@ function getCustomer(val) {
                       type: "POST",
                       async: false,
                       //url: "https://www.apleona.ie/wastefiles_test/get_waste_producer.php",
-                      url: "http://localhost/wastefiles_test/get_waste_producer.php",
+                      url: ROOTWASTE + "/get_waste_producer.php",
                       data: 'selected_site=' + encodeURIComponent(val) + '&selected_customer=' + encodeURIComponent(customer),
                       success: function(data){
                         $( '#Customer_Waste_Producer' ).html(data);
@@ -84,7 +86,7 @@ function getWasteProducerWorkspace(val) {
                       type: "POST",
                       async: false,
                       //url: "https://www.apleona.ie/wastefiles_test/get_waste_producer_workspace.php",
-                      url: "http://localhost/wastefiles_test/get_waste_producer_workspace.php",
+                      url: ROOTWASTE + "/get_waste_producer_workspace.php",
                       data: 'selected_customer=' + encodeURIComponent(val),
                       success: function(data){
                         $( '#Customer_Waste_Producer' ).html(data);
@@ -100,7 +102,7 @@ function getWasteProducerWorkspace(val) {
                       type: "POST",
                       async: false,
                       //url: "https://www.apleona.ie/wastefiles_test/get_address.php",
-                      url: "http://localhost/wastefiles_test/get_address.php",
+                      url: ROOTWASTE + "/get_address.php",
                       data: 'selected_site=' + encodeURIComponent(val),
                       success: function(data){
                         $( '#collections_address' ).html(data);
@@ -115,7 +117,7 @@ function getCustomerGroup(val) {
                       type: "POST",
                       async: false,
                       //url: "https://www.apleona.ie/wastefiles_test/get_customer_group.php",
-                      url: "http://localhost/wastefiles_test/get_customer_group.php",
+                      url: ROOTWASTE + "/get_customer_group.php",
                       data: 'selected_customer=' + encodeURIComponent(val),
                       success: function(data){
                         $( '#collections_customer_group' ).html(data);
@@ -129,7 +131,7 @@ function getCustomerGroup(val) {
                       type: "POST",
                       async: false,
                       //url: "https://www.apleona.ie/wastefiles_test/get_overall_customer.php",
-                      url: "http://localhost/wastefiles_test/get_overall_customer.php",
+                      url: ROOTWASTE + "/get_overall_customer.php",
                       data: 'selected_site=' + encodeURIComponent(val),
                       success: function(data){
                         $( '#collections_customer' ).html(data);
@@ -162,7 +164,7 @@ function getChildEWC(val) {
                         type: "POST",
                         async: false,
                         //url: "https://www.apleona.ie/wastefiles_test/get_child_ewc.php",
-                        url: "http://localhost/wastefiles_test/get_child_ewc.php",
+                        url: ROOTWASTE + "/get_child_ewc.php",
                         data: 'selected_ewc=' + encodeURIComponent(val),
                         success: function(data){
                           $( '#ewc_sub' ).html(data);
@@ -176,7 +178,7 @@ function getSubEWC(val) {
                         type: "POST",
                         async: false,
                         //url: "https://www.apleona.ie/wastefiles_test/get_sub_ewc.php",
-                        url: "http://localhost/wastefiles_test/get_sub_ewc.php",
+                        url: ROOTWASTE + "/get_sub_ewc.php",
                         data: 'selected_child=' + encodeURIComponent(val),
                         success: function(data){
                           $( '#ewc_child' ).html(data);
@@ -207,7 +209,7 @@ function getSubEWC(val) {
                 var endDate = fullEndDate;
                 //alert ("customer is" + customer +  "   site is"  +  site +  "  start is   " + start + "    end is   " + end);
                 //$.post("https://www.apleona.ie/wastefiles_test/top_quantities_new.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
-                $.post("http://localhost/wastefiles_test/top_quantities_new.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
+                $.post(ROOTWASTE + "/top_quantities_new.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
                 function (data)
                 {
                     console.log(data);
@@ -297,7 +299,7 @@ function getSubEWC(val) {
                 var endDate = end;
                 
                 //$.post("https://www.apleona.ie/wastefiles_test/top_types_new.php?mySite=" + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
-                $.post("http://localhost/wastefiles_test/top_types_new.php?mySite=" + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
+                $.post(ROOTWASTE + "/top_types_new.php?mySite=" + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
                  function (data)
                 {
                     console.log(data);
@@ -402,7 +404,7 @@ function getSubEWC(val) {
                 var startDate = start;
                 var endDate = end;
                 //$.post("https://www.apleona.ie/wastefiles_test/top_by_waste_producer_new.php?mySite=" + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
-                $.post("http://localhost/wastefiles_test/top_by_waste_producer_new.php?mySite=" + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
+                $.post(ROOTWASTE + "/top_by_waste_producer_new.php?mySite=" + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
                  function (data)
                 {
                     console.log(data);
@@ -495,7 +497,7 @@ function showGraph3(site, customer, fullStartDate, fullEndDate)
                 var endDate = fullEndDate;
                 //alert ("customer is" + customer +  "   site is"  +  site +  "  start is   " + start + "    end is   " + end);
                 //$.post("https://www.apleona.ie/wastefiles_test/top_quantities_cost.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
-                $.post("http://localhost/wastefiles_test/top_quantities_cost.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
+                $.post(ROOTWASTE + "/top_quantities_cost.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
                 function (data)
                 {
                     console.log(data);
@@ -602,7 +604,7 @@ function showGraph4(site, customer, fullStartDate, fullEndDate)
                 var endDate = fullEndDate;
                 //alert ("customer is" + customer +  "   site is"  +  site +  "  start is   " + start + "    end is   " + end);
                 //$.post("https://www.apleona.ie/wastefiles_test/waste_removed.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
-                $.post("http://localhost/wastefiles_test/waste_removed.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
+                $.post(ROOTWASTE + "/waste_removed.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
                 function (data)
                 {
                     console.log(data);
@@ -694,7 +696,7 @@ function showGraph5(site, customer, fullStartDate, fullEndDate)
                 var endDate = fullEndDate;
                 //alert ("customer is" + customer +  "   site is"  +  site +  "  start is   " + start + "    end is   " + end);
                 //$.post("https://www.apleona.ie/wastefiles_test/items_reused.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
-                $.post("http://localhost/wastefiles_test/items_reused.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
+                $.post(ROOTWASTE + "/items_reused.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
                 function (data)
                 {
                     console.log(data);
@@ -787,7 +789,7 @@ function showGraph5(site, customer, fullStartDate, fullEndDate)
                 var endDate = fullEndDate;
                 //alert ("customer is" + customer +  "   site is"  +  site +  "  start is   " + start + "    end is   " + end);
                 //$.post("https://www.apleona.ie/wastefiles_test/top_charity_quantities.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate, 
-                $.post("http://localhost/wastefiles_test/top_charity_quantities.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
+                $.post(ROOTWASTE + "/top_charity_quantities.php?mySite="  + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
                 function (data)
                 {
                     console.log(data);
@@ -872,7 +874,7 @@ function showGraph5(site, customer, fullStartDate, fullEndDate)
                 var startDate = fullStartDate;
                 var endDate = fullEndDate;
                 //$.post("https://www.apleona.ie/wastefiles_test/top_charity_by_waste_producer.php?mySite=" + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
-                $.post("http://localhost/wastefiles_test/top_charity_by_waste_producer.php?mySite=" + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
+                $.post(ROOTWASTE + "/top_charity_by_waste_producer.php?mySite=" + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
                  function (data)
                 {
                     console.log(data);
@@ -958,7 +960,7 @@ function showCharityGraph3(site, customer, fullStartDate, fullEndDate)
                 var startDate = fullStartDate;
                 var endDate = fullEndDate;
                 //$.post("https://www.apleona.ie/wastefiles_test/donations_by_charity.php?mySite=" + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
-                $.post("http://localhost/wastefiles_test/donations_by_charity.php?mySite=" + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
+                $.post(ROOTWASTE + "/donations_by_charity.php?mySite=" + thisSite + "&myCustomer=" + thisCustomer + "&myStart=" + startDate + "&myEnd=" + endDate,
                  function (data)
                 {
                     console.log(data);
