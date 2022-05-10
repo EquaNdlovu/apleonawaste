@@ -29,12 +29,12 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(system.defaultWorkingDirectory)'
+    rootFolderOrFile: '$(system.DefaultWorkingDirectory)'
     includeRootFolder: false
 
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(Build.DefaultWorkingDirectory)'
     ArtifactName: 'apleonawaste'
     publishLocation: 'Container'
