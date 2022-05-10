@@ -26,15 +26,17 @@ steps:
     sourceFolder: '$(Build.SourcesDirectory)'
     contents: '**/$(BuildConfiguration)/**/?(*.exe|*.dll|*.pdb)'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
-
+    
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+    ArtifactName: 'apleonawaste'
+    publishLocation: 'Container'
+    
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(system.DefaultWorkingDirectory)'
     includeRootFolder: false
 
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)'
-    ArtifactName: 'apleonawaste'
-    publishLocation: 'Container'
+
