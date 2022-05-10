@@ -1,0 +1,15 @@
+{
+    "name": "idm179081/apleonawaste",
+    "autoload": {
+        "psr-4": {
+            "Idm179081\\Apleonawaste\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "cgrehan",
+            "email": "conor.grehan@apleona.com"
+        }
+    ],
+    "require": {}
+}
